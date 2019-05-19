@@ -1,0 +1,14 @@
+[Credentials]
+    language = CH 
+    endpoint = oss-cn-beijing.aliyuncs.com
+    accessKeyID = LTAIcMnaxxUG7dbk
+    accessKeySecret = VhNgQZrGYz7dXpiCUS8r36mbLgy6db
+    stsToken = your_sts_token
+    outputDir = ./
+[Bucket-Endpoint]
+    bucket1 = endpoint1
+    bucket2 = endpoint2
+    ...
+[Bucket-Cname]
+    bucket1 = cname1
+    bucket2 = cname2

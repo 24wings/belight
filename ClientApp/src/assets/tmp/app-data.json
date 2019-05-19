@@ -1,0 +1,87 @@
+{
+  "app": {
+    "name": "Alain",
+    "description": "Ng-zorro admin panel front-end framework"
+  },
+  "user": {
+    "name": "Admin",
+    "avatar": "./assets/tmp/img/avatar.jpg",
+    "email": "cipchk@qq.com"
+  },
+  "menu": [
+    {
+      "text": "系统",
+      "i18n": "系统",
+      "group": true,
+      "hideInBreadcrumb": true,
+      "children": [
+        {
+          "text": "角色权限",
+          "i18n": "角色权限",
+          "icon": "anticon anticon-dashboard",
+          "children": [
+            {
+              "text": "公司",
+              "link": "/rbac/company",
+              "i18n": "公司"
+            },
+            {
+              "text": "用户",
+              "link": "/rbac/user",
+              "i18n": "用户"
+            },
+            {
+              "text": "组织",
+              "link": "/rbac/org",
+              "i18n": "组织"
+            },
+            {
+              "text": "菜单",
+              "link": "/rbac/menu",
+              "i18n": "菜单"
+            },
+            {
+              "text": "角色",
+              "link": "/rbac/role",
+              "i18n": "角色"
+            },
+            {
+              "text": "缺勤统计",
+              "link": "/study/absence-statistics",
+              "i18n": "缺勤统计"
+            }
+          ]
+        },
+        {
+          "text": "学习",
+          "i18n": "学习",
+          "icon": "anticon anticon-rocket",
+          "children": [
+            {
+              "text": "大纲",
+              "i18n": "大纲",
+              "link": "/study/subject"
+            },
+            {
+              "text": "学习",
+              "i18n": "课程表",
+              "link": "/study/my-routine"
+            },
+            {
+              "text": "请假",
+              "i18n": "请假",
+              "link": "/study/leave"
+            }
+          ]
+        },
+        {
+          "text": "小部件",
+          "i18n": "menu.widgets",
+          "link": "/widgets",
+          "icon": "anticon anticon-appstore",
+          "badge": 2
+        }
+      ]
+    }
+  ]
+}

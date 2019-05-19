@@ -1,0 +1,35 @@
+{
+    "app": {
+        "name": "大学管理系统app",
+        "description": "Ng-zorro admin panel front-end framework"
+    },
+    "user": {
+        "name": "Admin",
+        "avatar": "./assets/tmp/img/avatar.jpg",
+        "email": "cipchk@qq.com"
+    },
+    "menu": [
+        {
+            "text": "学习",
+            "i18n": "学习",
+            "icon": "anticon anticon-rocket",
+            "children": [
+                {
+                    "text": "大纲",
+                    "i18n": "大纲",
+                    "link": "/study/subject"
+                },
+                {
+                    "text": "学习",
+                    "i18n": "课程表",
+                    "link": "/study/my-routine"
+                },
+                {
+                    "text": "请假",
+                    "i18n": "请假",
+                    "link": "/study/leave"
+                }
+            ]
+        }
+    ]
+}
