@@ -30,15 +30,7 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSession(options =>
-        {
-            // Set a short timeout for easy testing.
-            options.IdleTimeout = TimeSpan.FromSeconds(4 * 60);
-            options.Cookie.HttpOnly = true;
-            // Make the session cookie essential
-            options.Cookie.IsEssential = true;
-        });
-            // 跨域
+               // 跨域
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllOrigin", builder =>
@@ -52,6 +44,15 @@ namespace WebApplication1
                     ;
                 });
             });
+            services.AddSession(options =>
+        {
+            // Set a short timeout for easy testing.
+            options.IdleTimeout = TimeSpan.FromSeconds(4 * 60);
+            options.Cookie.HttpOnly = true;
+            // Make the session cookie essential
+            options.Cookie.IsEssential = true;
+        });
+         
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
             // In production, the Angular files will be served from this directory
@@ -95,6 +96,7 @@ namespace WebApplication1
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -109,7 +111,7 @@ namespace WebApplication1
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
-            app.UseCors("AllowAllOrigin");
+
             var settings = new SwaggerDocumentMiddlewareSettings();
             settings.PostProcess = (document, request) =>
             {
@@ -121,6 +123,7 @@ namespace WebApplication1
             app.UseSwagger();
 
             app.UseMvc();
+            app.UseCors("AllowAllOrigin");
 
             app.UseSpa(spa =>
             {
