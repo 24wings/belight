@@ -10,6 +10,15 @@ namespace Wings.Base.Common.DTO
         public string insertUrl { get; set; }
     }
 
+    public class Col : Attribute
+    {
+        /// <summary>
+        /// 标签
+        /// </summary>
+        /// <value></value>
+        public string label { get; set; }
+    }
+
     public class View : Attribute
     {
         public string viewType { get; set; }
@@ -25,6 +34,7 @@ namespace Wings.Base.Common.DTO
             this.viewType = _viewType;
         }
 
+        public List<Col> cols { get; set; } = new List<Col>();
 
 
     }
@@ -37,7 +47,6 @@ namespace Wings.Base.Common.DTO
     [View(nameof(ViewType.TreeTable))]
     public class MenuManagePage
     {
-
         public int id { get; set; }
         public string link { get; set; }
         public string text { get; set; }

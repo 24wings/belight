@@ -24,23 +24,36 @@ namespace Wings.Base.Common
     /// 流式上传
     /// </summary>
     [ApiController]
-    [Route("/apis/[controller]")]
-    public class RedirectController : Controller
+    [Route("/api/[controller]/[action]")]
+    public class DTOController : Controller
     {
         /// <summary>
         /// 
         /// </summary>
-        public RedirectController() { }
+        public DTOController() { }
 
         /// <summary>
         /// 流式上传
         /// </summary>
         /// <returns></returns>
-        [HttpGet("{*url}")]
-        public object redirect()
+        [HttpGet]
+        public object load()
         {
+            var type = Assembly.GetEntryAssembly().GetType("Wings.Base.Common.DTO.MenuManagePage");
+
+            var view = (View)type.GetCustomAttribute<View>();
+            // view
+
+            var members = type.GetMembers();
+            foreach (var m in members)
+            {
+
+            }
+
+
+            // var dbSet = this.getEntityByName(viewAttr.entity);
             // var
-            return true;
+            // return true;
 
         }
         [HttpPost]
